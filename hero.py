@@ -1,6 +1,7 @@
 import random
 from ability import Ability
 from armor import Armor
+from weapon import Weapon
 
 
 class Hero:
@@ -74,13 +75,20 @@ class Hero:
         """
         return True if self.current_health > 0 else False
 
+    def add_weapon(self, weapon):
+        """Add weapon to self.abilities"""
+        self.abilities.append(weapon)
+
 if __name__ == "__main__":
     hero1 = Hero("Brian Cahill", 300)
     hero2 = Hero("Josh Faigan", 250)
     ability1 = Ability("Super Eyes", 130)
-    ability2 = Ability("Super Speed", 230)
+    ability2 = Ability("Super Speed", 300)
     armor1 = Armor("Wizard Pointy Hat", 80)
     armor2 = Armor("Wizard Beard", 20)
+    weapon = Weapon("Lasso of Truth", 90)
+    hero1.add_weapon(weapon)
+    print(hero1.attack())
     hero1.add_ability(ability1)
     hero1.add_armor(armor1)
     hero2.add_ability(ability2)
